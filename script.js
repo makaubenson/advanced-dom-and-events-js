@@ -41,7 +41,7 @@ console.log(document.head);
 console.log(document.body);
 
 //Using query selectpr
-document.querySelector('.header');
+const header = document.querySelector('.header');
 const allSections = document.querySelectorAll('.section');
 console.log(allSections);
 
@@ -57,3 +57,23 @@ console.log(document.getElementsByClassName('btn'));
 
 //Creating and Inserting Elements
 // .insertAdjacentHTML
+
+//createElement()
+const message = document.createElement('div');
+message.classList.add('cookie-message');
+// message.textContent = 'We use cookies for improved functionality and analytics';
+message.innerHTML =
+  'We use cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got It</button>';
+
+//prepend adds the element as the first child of the element it is being added to.
+// header.prepend(message);
+// append adds the element as the last child of the element it is being added to.
+header.append(message);
+
+// inserting multiple copies of the same element
+// header.append(message.cloneNode(true));
+
+//inserts element before the select object
+// header.before(message);
+//inserts element after the select object
+// header.after(message);
