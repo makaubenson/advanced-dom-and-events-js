@@ -85,3 +85,13 @@ header.after(message);
 ```
 
 - append and prepend can be used to move elements
+
+#### delete elements
+
+```
+document
+.querySelector('.btn--close-cookie')
+.addEventListener('click', function () {
+message.remove();
+});
+```

@@ -77,3 +77,10 @@ header.append(message);
 // header.before(message);
 //inserts element after the select object
 // header.after(message);
+
+//delete elements
+document
+  .querySelector('.btn--close-cookie')
+  .addEventListener('click', function () {
+    message.remove();
+  });
