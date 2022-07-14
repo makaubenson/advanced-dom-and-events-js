@@ -150,3 +150,35 @@ logo.setAttribute('author', 'makau');
 console.log(logo.getAttribute('author')); //makau
 
 ```
+
+### Data Attributes
+
+```
+ <img
+          src="img/logo.png"
+          alt="Bankist logo"
+          class="nav__logo"
+          id="logo"
+          designer="Benson"
+          data-version-number="3.0"
+        />
+```
+
+- `version-number` - transformed to `versionNumber`
+
+```
+console.log(logo.dataset.versionNumber);
+
+```
+
+### Classes
+
+```
+logo.classList.add('c');
+logo.classList.remove('c');
+logo.classList.toggle('c');
+logo.classList.contains('c');
+
+```
+
+- ` logo.className = 'Benson';` - It is bad practice to add classes this way as it overrides all the existing classes and only allows for one class

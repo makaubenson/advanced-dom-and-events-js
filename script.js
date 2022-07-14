@@ -123,3 +123,14 @@ console.log(logo.getAttribute('author')); //makau
 const link = document.querySelector('.nav__link--btn');
 console.log(link.href); //http://127.0.0.1:8080/?#
 console.log(link.getAttribute('href')); //#
+
+//Data Attributes
+console.log(logo.dataset.versionNumber);
+
+//Classes
+// logo.classList.add('c');
+// logo.classList.remove('c');
+// logo.classList.toggle('c');
+// logo.classList.contains('c');
+
+// logo.className = 'Benson';
