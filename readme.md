@@ -25,8 +25,10 @@
 
 ### Selecting, creating, and deleting elements
 
+#### Selecting the whole document
+
 ```
-//Selecting the whole document
+
 console.log(document.documentElement);
 //Selecting the head section
 console.log(document.head);

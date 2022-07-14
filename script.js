@@ -51,5 +51,9 @@ document.getElementById('section--1');
 //getElementsByTagName()
 const allButtons = document.getElementsByTagName('button');
 console.log(allButtons);
+
 // getElementsByClassName
 console.log(document.getElementsByClassName('btn'));
+
+//Creating and Inserting Elements
+// .insertAdjacentHTML
