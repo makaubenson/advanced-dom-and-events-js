@@ -121,3 +121,32 @@ message.style.height =
 
 document.documentElement.style.setProperty('--color-primary', 'orangered');
 ```
+
+### Reading Attributes
+
+```
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt);
+console.log(logo.src); //http://127.0.0.1:8080/img/logo.png
+console.log(logo.getAttribute('src')); //img/logo.png
+console.log(logo.className);
+
+//Cant see designer since its not a known attribute that is found in images
+console.log(logo.designer);
+//to fetch attributes which are not starndard use
+console.log(logo.getAttribute('designer'));
+
+const link = document.querySelector('.nav__link--btn');
+console.log(link.href); //http://127.0.0.1:8080/?#
+console.log(link.getAttribute('href')); //#
+```
+
+### Writing Attributes
+
+```
+logo.alt = 'Beautiful Minimalised Logo';
+console.log(logo.alt); //Beautiful Minimalised Logo
+logo.setAttribute('author', 'makau');
+console.log(logo.getAttribute('author')); //makau
+
+```

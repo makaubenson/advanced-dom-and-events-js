@@ -32,6 +32,19 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+//Using query selectpr
+const header = document.querySelector('.header');
+const allSections = document.querySelectorAll('.section');
+console.log(allSections);
+
+//createElement()
+const message = document.createElement('div');
+message.classList.add('cookie-message');
+// message.textContent = 'We use cookies for improved functionality and analytics';
+message.innerHTML =
+  'We use cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got It</button>';
+
+/*
 // Selecting, creating, and deleting elements
 //Selecting the whole document
 console.log(document.documentElement);
@@ -39,11 +52,6 @@ console.log(document.documentElement);
 console.log(document.head);
 //Selecting the body section
 console.log(document.body);
-
-//Using query selectpr
-const header = document.querySelector('.header');
-const allSections = document.querySelectorAll('.section');
-console.log(allSections);
 
 //getElementById()
 document.getElementById('section--1');
@@ -58,12 +66,6 @@ console.log(document.getElementsByClassName('btn'));
 //Creating and Inserting Elements
 // .insertAdjacentHTML
 
-//createElement()
-const message = document.createElement('div');
-message.classList.add('cookie-message');
-// message.textContent = 'We use cookies for improved functionality and analytics';
-message.innerHTML =
-  'We use cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got It</button>';
 
 //prepend adds the element as the first child of the element it is being added to.
 // header.prepend(message);
@@ -98,3 +100,26 @@ message.style.height =
   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
 
 document.documentElement.style.setProperty('--color-primary', 'orangered');
+*/
+//Reading Attributes
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt);
+console.log(logo.src); //http://127.0.0.1:8080/img/logo.png
+console.log(logo.getAttribute('src')); //img/logo.png
+console.log(logo.className);
+
+//Cant see designer since its not a known attribute that is found in images
+console.log(logo.designer); //undefined
+
+//to fetch attributes which are not starndard use
+console.log(logo.getAttribute('designer'));
+
+//Writing Attributes
+logo.alt = 'Beautiful Minimalised Logo';
+console.log(logo.alt); //Beautiful Minimalised Logo
+logo.setAttribute('author', 'makau');
+console.log(logo.getAttribute('author')); //makau
+
+const link = document.querySelector('.nav__link--btn');
+console.log(link.href); //http://127.0.0.1:8080/?#
+console.log(link.getAttribute('href')); //#
