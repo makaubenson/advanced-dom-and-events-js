@@ -182,3 +182,74 @@ logo.classList.contains('c');
 ```
 
 - ` logo.className = 'Benson';` - It is bad practice to add classes this way as it overrides all the existing classes and only allows for one class
+
+#### Smmoth Scroll :Method 1
+
+```
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+e.preventDefault();
+//get coordinates of the section you want to scroll to
+const s1coords = section1.getBoundingClientRect();
+console.log(s1coords);
+
+//get coordinates of the button being clicked
+console.log(e.target.getBoundingClientRect());
+
+//get current scroll position
+console.log('Current scroll: (X,Y)', window.pageXOffset, window.pageYOffset);
+
+//Height/width of website's viewport
+console.log(
+'Height/width of viewport:',
+document.documentElement.clientHeight,
+document.documentElement.clientWidth
+);
+
+//scrolling
+window.scrollTo(s1coords);
+});
+```
+
+#### Smooth Scrolling : Old School
+
+```
+//Smooth Scroll :Method 1
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  e.preventDefault();
+  //get coordinates of the section you want to scroll to
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+
+  //get coordinates of the button being clicked
+  // console.log(e.target.getBoundingClientRect());
+
+  //get current scroll position
+  // console.log('Current scroll: (X,Y)', window.pageXOffset, window.pageYOffset);
+
+  //Height/width of website's viewport
+  // console.log(
+  //   'Height/width of viewport:',
+  //   document.documentElement.clientHeight,
+  //   document.documentElement.clientWidth
+  // );
+
+  //scrolling (This works though not very smooth)
+  // window.scrollTo(
+  //   s1coords.left + window.pageXOffset,
+  //   s1coords.top + window.pageYOffset
+  // );
+
+  //smooth scrolling
+  window.scrollTo({
+    left: s1coords.left + window.pageXOffset,
+    top: s1coords.top + window.pageYOffset,
+    behavior: 'smooth',
+  });
+});
+```
