@@ -35,7 +35,7 @@ document.addEventListener('keydown', function (e) {
 //Using query selectpr
 const header = document.querySelector('.header');
 const allSections = document.querySelectorAll('.section');
-console.log(allSections);
+// console.log(allSections);
 
 //createElement()
 const message = document.createElement('div');
@@ -44,15 +44,15 @@ message.classList.add('cookie-message');
 message.innerHTML =
   'We use cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got It</button>';
 
-//Smmoth Scroll :Method 1
+//Smooth Scroll :Method 1
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
 
 btnScrollTo.addEventListener('click', function (e) {
   e.preventDefault();
   //get coordinates of the section you want to scroll to
-  const s1coords = section1.getBoundingClientRect();
-  console.log(s1coords);
+  // const s1coords = section1.getBoundingClientRect();
+  // console.log(s1coords);
 
   //get coordinates of the button being clicked
   // console.log(e.target.getBoundingClientRect());
@@ -73,14 +73,26 @@ btnScrollTo.addEventListener('click', function (e) {
   //   s1coords.top + window.pageYOffset
   // );
 
-  //smooth scrolling
-  window.scrollTo({
-    left: s1coords.left + window.pageXOffset,
-    top: s1coords.top + window.pageYOffset,
+  // //smooth scrolling
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // });
+});
+//Method 2 : Smooth Scrolling
+btnScrollTo.addEventListener('click', function (e) {
+  e.preventDefault();
+  //get coordinates of the section you want to scroll to
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+
+  //Method 2 : Modern way
+  //Take Element you want to scroll to
+  section1.scrollIntoView({
     behavior: 'smooth',
   });
 });
-
 /*
 // Selecting, creating, and deleting elements
 //Selecting the whole document

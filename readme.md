@@ -253,3 +253,25 @@ btnScrollTo.addEventListener('click', function (e) {
   });
 });
 ```
+
+#### Smooth Scroll: New Way
+
+- This method works in modern browsers
+
+```
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  e.preventDefault();
+  //get coordinates of the section you want to scroll to
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+
+  //Method 2 : Modern way
+  //Take Element you want to scroll to
+  section1.scrollIntoView({
+    behavior: 'smooth',
+  });
+});
+```
