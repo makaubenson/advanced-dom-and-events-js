@@ -31,3 +31,25 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+// Selecting, creating, and deleting elements
+//Selecting the whole document
+console.log(document.documentElement);
+//Selecting the head section
+console.log(document.head);
+//Selecting the body section
+console.log(document.body);
+
+//Using query selectpr
+document.querySelector('.header');
+const allSections = document.querySelectorAll('.section');
+console.log(allSections);
+
+//getElementById()
+document.getElementById('section--1');
+
+//getElementsByTagName()
+const allButtons = document.getElementsByTagName('button');
+console.log(allButtons);
+// getElementsByClassName
+console.log(document.getElementsByClassName('btn'));
