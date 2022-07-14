@@ -95,3 +95,29 @@ document
 message.remove();
 });
 ```
+
+### Styles
+
+- styles set using js are added to html as inline styles.
+
+```
+  message.style.backgroundColor = '#37383d';
+  message.style.width = '120%';
+```
+
+##### getting style properties for an element
+
+```
+console.log(getComputedStyle(message));
+console.log(getComputedStyle(message).color);
+
+//getting style properties for an element
+console.log(getComputedStyle(message));
+console.log(getComputedStyle(message).color);
+console.log(getComputedStyle(message).height);
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+```

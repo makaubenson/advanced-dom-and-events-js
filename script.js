@@ -84,3 +84,17 @@ document
   .addEventListener('click', function () {
     message.remove();
   });
+
+//Styles
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+
+//getting style properties for an element
+console.log(getComputedStyle(message));
+console.log(getComputedStyle(message).color);
+console.log(getComputedStyle(message).height);
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+
+document.documentElement.style.setProperty('--color-primary', 'orangered');
