@@ -93,6 +93,7 @@ btnScrollTo.addEventListener('click', function (e) {
     behavior: 'smooth',
   });
 });
+
 /*
 // Selecting, creating, and deleting elements
 //Selecting the whole document
@@ -184,3 +185,17 @@ console.log(logo.dataset.versionNumber);
 
 // logo.className = 'Benson';
 */
+const alertH1 = function (e) {
+  alert('addEventListener: Great, you are reading the heading :D');
+  //removing event handlers
+  h1.removeEventListener('mouseenter', alertH1);
+};
+//mouseenter
+const h1 = document.querySelector('h1');
+// mouseenter works similar to hover in css, it fires when mouse enters the specified element or section
+h1.addEventListener('mouseenter', alertH1);
+
+//method 2 of attaching event handlers to elements
+// h1.onmouseenter = function (e) {
+//   alert('onmouseenter: Good, you are reading the heading :D');
+// };
