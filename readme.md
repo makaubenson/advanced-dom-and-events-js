@@ -331,5 +331,3 @@ h1.addEventListener('mouseenter', alertH1);
 - This method is however not recommended
 
 ### Event Propagation: Bubbling and Capturing
-
-- Js events have
