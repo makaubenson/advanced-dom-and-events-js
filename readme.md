@@ -341,3 +341,13 @@ h1.addEventListener('mouseenter', alertH1);
 - By the default, events can only be handled in the target or in the bubbling phase, however we can set up event listeners to listen to events while in the capturing phase.
 - NOTE: Not all events have capturing and bubbling phase, some are created right on the target element.
 - When an event is said to have capturing and bubbling phases, it is said to have ability to propagate..
+
+#### Create Random Color e.g rgb(255,255,255)
+
+```
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+console.log(randomColor(0, 255));
+```
