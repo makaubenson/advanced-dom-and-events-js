@@ -379,3 +379,18 @@ document.querySelector('.nav').addEventListener('click', function (e) {
 
 - When the 3rd param is set to true, the addEventListener stops listening to bubbling phase and begins listening to capturing phase.
 - By default the 3rd param is set to `false`.
+
+### Navigation Links : Smooth Scroll
+
+```
+document.querySelectorAll('.nav__link').forEach(function (el) {
+  el.addEventListener('click', function (e) {
+    e.preventDefault();
+    const id = this.getAttribute('href');
+    // console.log(id);
+    document.querySelector(id).scrollIntoView({
+      behavior: 'smooth',
+    });
+  });
+});
+```
