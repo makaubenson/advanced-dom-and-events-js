@@ -380,7 +380,7 @@ document.querySelector('.nav').addEventListener('click', function (e) {
 - When the 3rd param is set to true, the addEventListener stops listening to bubbling phase and begins listening to capturing phase.
 - By default the 3rd param is set to `false`.
 
-### Navigation Links : Smooth Scroll
+### Navigation Links : Smooth Scroll Without Delegation
 
 ```
 document.querySelectorAll('.nav__link').forEach(function (el) {
@@ -396,3 +396,24 @@ document.querySelectorAll('.nav__link').forEach(function (el) {
 ```
 
 - This method works well though it isn't efficient.
+
+#### Method 2: Navigation Links : Smooth Scroll With Delegation
+
+- 1. Add event listener to common parent element
+- 2. Determine what element originated the event
+
+```
+document.querySelector('.nav\_\_links').addEventListener('click', function (e) {
+e.preventDefault();
+// console.log(e.target); // find where the event happened.
+
+//Matching Strategy
+if (e.target.classList.contains('nav\_\_link')) {
+const id = e.target.getAttribute('href');
+// console.log(id);
+document.querySelector(id).scrollIntoView({
+behavior: 'smooth',
+});
+}
+});
+```
