@@ -351,3 +351,6 @@ const randomColor = () =>
   `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
 console.log(randomColor(0, 255));
 ```
+
+- `e.target` means where the event originated
+- `e.currentTarget ` means where the event handler is attached to.
