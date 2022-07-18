@@ -417,3 +417,5 @@ behavior: 'smooth',
 }
 });
 ```
+
+- Event delegation is better abd efficient.
