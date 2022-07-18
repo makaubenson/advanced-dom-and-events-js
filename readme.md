@@ -442,3 +442,17 @@ h1.firstElementChild.style.color = 'white';
 console.log(h1.lastElementChild);
 h1.lastElementChild.style.color = 'orangered';
 ```
+
+##### Going upwards: selecting parent elements
+
+```
+console.log(h1.parentNode);
+console.log(h1.parentElement);
+
+//finding the closest parent element
+h1.closest('.header').style.background = 'var(--gradient-secondary)';
+
+h1.closest('h1').style.background = 'var(--gradient-primary)';
+```
+
+- We can think of closest as being the opposite of query selector. querySelector selects child elements no matter how deep they are while closest finds parent elements no matter how up they are.
