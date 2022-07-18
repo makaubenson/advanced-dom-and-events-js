@@ -94,6 +94,34 @@ btnScrollTo.addEventListener('click', function (e) {
   });
 });
 
+//Tabbed Component
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
+
+//use events delegation
+tabsContainer.addEventListener('click', function (e) {
+  const clicked = e.target.closest('.operations__tab');
+  // console.log(clicked);
+
+  //Guard Clause - This is an if statement returned early if some condition is met
+  if (!clicked) return;
+
+  //remove active classes
+  tabs.forEach(tab => tab.classList.remove('operations__tab--active'));
+
+  tabsContent.forEach(tabContent =>
+    tabContent.classList.remove('operations__content--active')
+  );
+
+  clicked.classList.add('operations__tab--active');
+
+  // console.log(clicked.dataset.tab);
+  //Activate Content Area
+  document
+    .querySelector(`.operations__content--${clicked.dataset.tab}`)
+    .classList.add('operations__content--active');
+});
 ////////////////////////////////////////
 // Page Navigation
 ///////////////////////////////////////
@@ -266,7 +294,7 @@ document.querySelector('.nav').addEventListener('click', function (e) {
 //   true
 // );
 
-*/
+
 //DOM Traversing
 const h1 = document.querySelector('h1');
 // Going downwards: selecting child elements
@@ -290,3 +318,18 @@ console.log(h1.parentElement);
 h1.closest('.header').style.background = 'var(--gradient-secondary)';
 
 h1.closest('h1').style.background = 'var(--gradient-primary)';
+
+//Going Side Ways: siblings
+console.log(h1.previousElementSibling); //null
+console.log(h1.nextElementSibling); // <h4>A simpler banking experience for a simpler life.</h4>
+
+console.log(h1.previousSibling);
+console.log(h1.nextSibling);
+
+console.log(h1.parentElement.children);
+//HTMLCollection(4) [h1, h4, button.btn--text.btn--scroll-to, img.header__img]
+
+[...h1.parentElement.children].forEach(function (el) {
+  if (el !== h1) el.style.transform = 'scale(0.5)';
+});
+*/

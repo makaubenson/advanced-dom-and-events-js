@@ -456,3 +456,22 @@ h1.closest('h1').style.background = 'var(--gradient-primary)';
 ```
 
 - We can think of closest as being the opposite of query selector. querySelector selects child elements no matter how deep they are while closest finds parent elements no matter how up they are.
+
+##### Going Side Ways: siblings
+
+- For some reason, in js we can only select direct siblings i.e `only the previous and the next one.`
+
+```
+console.log(h1.previousElementSibling); //null
+console.log(h1.nextElementSibling); // <h4>A simpler banking experience for a simpler life.</h4>
+
+console.log(h1.previousSibling);
+console.log(h1.nextSibling);
+
+console.log(h1.parentElement.children);
+//HTMLCollection(4) [h1, h4, button.btn--text.btn--scroll-to, img.header__img]
+
+[...h1.parentElement.children].forEach(function (el) {
+  if (el !== h1) el.style.transform = 'scale(0.5)';
+});
+```
