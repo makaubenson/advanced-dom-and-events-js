@@ -418,4 +418,4 @@ behavior: 'smooth',
 });
 ```
 
-- Event delegation is better abd efficient.
+- Event delegation is better and efficient.
