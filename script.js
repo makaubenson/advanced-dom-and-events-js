@@ -32,7 +32,7 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-//Using query selectpr
+//Using query selector
 const header = document.querySelector('.header');
 const allSections = document.querySelectorAll('.section');
 // console.log(allSections);
@@ -94,6 +94,16 @@ btnScrollTo.addEventListener('click', function (e) {
   });
 });
 
+////////////////////////////////////////
+// Page Navigation
+///////////////////////////////////////
+//Method 1: Without Delegation
+document.querySelectorAll('.nav__link').forEach(function (el) {
+  el.addEventListener('click', function (e) {
+    e.preventDefault();
+    console.log('LINKKKK');
+  });
+});
 /*
 // Selecting, creating, and deleting elements
 //Selecting the whole document
@@ -184,7 +194,7 @@ console.log(logo.dataset.versionNumber);
 // logo.classList.contains('c');
 
 // logo.className = 'Benson';
-*/
+
 const alertH1 = function (e) {
   alert('addEventListener: Great, you are reading the heading :D');
   //removing event handlers
@@ -233,3 +243,5 @@ document.querySelector('.nav').addEventListener('click', function (e) {
 //   },
 //   true
 // );
+
+*/
