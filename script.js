@@ -267,3 +267,17 @@ document.querySelector('.nav').addEventListener('click', function (e) {
 // );
 
 */
+//DOM Traversing
+const h1 = document.querySelector('h1');
+// Going downwards: selecting child elements
+//Using query selector
+console.log(h1.querySelectorAll('.highlight')); //selects all elements that are children of h1 with highlight class
+console.log(h1.childNodes); //or
+console.log(h1.children); // This works for direct children
+console.log(h1.firstChild); //When
+console.log(h1.lastChild); //#text
+
+console.log(h1.firstElementChild);
+h1.firstElementChild.style.color = 'white';
+console.log(h1.lastElementChild);
+h1.lastElementChild.style.color = 'orangered';

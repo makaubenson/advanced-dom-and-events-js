@@ -420,3 +420,25 @@ behavior: 'smooth',
 
 - Event delegation is better and efficient.
 - Important use case is when there are elements thats are not there when the page loads. E.g Dynamic Buttons
+
+### DOM Traversing
+
+- Walking through the DOM, meaning we can select an element based on another. E.g direct child or direct parent, or in cases we dont know the DOM structure.
+
+##### Going downwards: selecting child elements
+
+```
+const h1 = document.querySelector('h1');
+
+//Using query selector
+console.log(h1.querySelectorAll('.highlight')); //selects all elements that are children of h1 with highlight class
+console.log(h1.childNodes); //or
+console.log(h1.children); // This works for direct children
+console.log(h1.firstChild); //When
+console.log(h1.lastChild); //#text
+
+console.log(h1.firstElementChild);
+h1.firstElementChild.style.color = 'white';
+console.log(h1.lastElementChild);
+h1.lastElementChild.style.color = 'orangered';
+```
