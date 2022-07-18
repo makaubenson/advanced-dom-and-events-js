@@ -365,3 +365,16 @@ e.stopPropagation();
 
 - After this, event never reaches the parent elements.
 - This is however not a very good idea.
+
+#### Listening to Capturing Events.
+
+- We need to set the 3rd parameter on the `addEventListener()` function to true or false
+
+```
+document.querySelector('.nav').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('NAV', e.target, e.currentTarget);
+},true);
+```
+
+- When the 3rd param is set to true, the addEventListener stops listening to bubbling phase and begins listening to capturing phase.
