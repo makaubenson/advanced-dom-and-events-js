@@ -378,3 +378,4 @@ document.querySelector('.nav').addEventListener('click', function (e) {
 ```
 
 - When the 3rd param is set to true, the addEventListener stops listening to bubbling phase and begins listening to capturing phase.
+- By default the 3rd param is set to `false`.
