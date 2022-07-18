@@ -419,3 +419,4 @@ behavior: 'smooth',
 ```
 
 - Event delegation is better and efficient.
+- Important use case is when there are elements thats are not there when the page loads. E.g Dynamic Buttons
