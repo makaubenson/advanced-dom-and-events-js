@@ -354,3 +354,13 @@ console.log(randomColor(0, 255));
 
 - `e.target` means where the event originated
 - `e.currentTarget ` means where the event handler is attached to.
+
+#### Stop Propagation
+
+```
+e.stopPropagation();
+
+```
+
+- After this, event never reaches the parent elements.
+- This is however not a very good idea.
