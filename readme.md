@@ -394,3 +394,5 @@ document.querySelectorAll('.nav__link').forEach(function (el) {
   });
 });
 ```
+
+- This method works well though it isn't efficient.
