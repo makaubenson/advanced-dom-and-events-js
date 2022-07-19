@@ -498,3 +498,8 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 });
 headerObserver.observe(header);
 ```
+
+### Lazy Loading Images
+
+- Images have by far the most effect of perfomance of a website.
+- To optimize their perfomance, we can then use a strategy called `lazy Loading images`.
