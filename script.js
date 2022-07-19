@@ -186,6 +186,9 @@ const headerObserver = new IntersectionObserver(stickyNav, {
   rootMargin: `-${navHeight}px`, //90px before target element : 90 is the height
 });
 headerObserver.observe(header);
+
+//Revealing Elements on Scroll using The Intersection API
+
 ////////////////////////////////////////
 // Page Navigation
 ///////////////////////////////////////
