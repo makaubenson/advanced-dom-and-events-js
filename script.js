@@ -213,12 +213,12 @@ allSections.forEach(function (section) {
 
 //Lazy Loading Images
 const imgTargets = document.querySelectorAll('img[data-src]');
-console.log(imgTargets);
+// console.log(imgTargets);
 
 //Callback Function
 const loadImg = function (entries, observer) {
   const [entry] = entries;
-  console.log(entry);
+  // console.log(entry);
 
   if (!entry.isIntersecting) return; //Guard Clause
 
@@ -247,6 +247,8 @@ imgTargets.forEach(img => imgObserver.observe(img));
 const slides = document.querySelectorAll('.slide');
 const btnLeft = document.querySelector('.slider__btn--left');
 const btnRight = document.querySelector('.slider__btn--right');
+const dotContainer = document.querySelector('.dots');
+
 let curSlide = 0;
 const maxSlide = slides.length;
 
@@ -260,11 +262,20 @@ const maxSlide = slides.length;
 // });
 //0%, 100%,200%,300%
 
-const goToSlide = function (slide) {
-  //s- slide, i - index : //-100%, 0%,100%,200%
-  slides.forEach(function (s, i) {
-    s.style.transform = `translateX(${100 * (i - curSlide)}%)`;
+const createDots = function () {
+  slides.forEach(function (_, i) {
+    dotContainer.insertAdjacentHTML(
+      'beforeend',
+      `<button class="dots__dot" data-slide="${i}"></button>`
+    );
   });
+};
+
+createDots();
+const goToSlide = function (slide) {
+  slides.forEach(
+    (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
+  );
 };
 
 goToSlide(0);
@@ -294,9 +305,17 @@ btnLeft.addEventListener('click', prevSlide);
 
 //getting Keyboard Activity
 document.addEventListener('keydown', function (e) {
-  console.log(e);
+  // console.log(e);
   if (e.key === 'ArrowLeft') prevSlide();
   if (e.key === 'ArrowRight') nextSlide();
+});
+
+dotContainer.addEventListener('click', function (e) {
+  if (e.target.classList.contains('dots__dot')) {
+    const { slide } = e.target.dataset;
+    goToSlide(slide);
+    // activateDot(slide);
+  }
 });
 ////////////////////////////////////////
 // Page Navigation
