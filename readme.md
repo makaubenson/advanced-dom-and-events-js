@@ -333,8 +333,12 @@ h1.addEventListener('mouseenter', alertH1);
 ### Event Propagation: Bubbling and Capturing
 
 - Js Events have a very important property. The Bubbling Phase and Capturing Phase.
-  ![image]
-  ![image]
+![Bulling and Capturing](https://user-images.githubusercontent.com/59168713/179665574-6592b59a-14c4-4651-b736-b317b009817a.png)
+![Bubling and Captring representation](https://user-images.githubusercontent.com/59168713/179665610-9d499449-38c3-486f-9c33-36e206fecb78.png)
+
+  
+  
+
 - When a link is clicked in `<a>` element, the event is generated at the `root document`, Then the `capturing phase` happens as the event travels from the `root document` down the tree to the `target element`. `html -> body -> section -> p -> a elements `
 - As the event reaches the target element, the `target phase` begins, where events can be handled right at the target. Event Listeners wait for an event to happen on a certain element, and as soon as it happens, they call the `callback` function.
 - The event then travels up from the `target` to the `root document` in the `Bubbling Phase`. `It is said that events bubble up from to the target to the document root`. `a-> p-> section -> body -> html`
