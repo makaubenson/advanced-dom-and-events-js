@@ -554,6 +554,11 @@ window.addEventListener('beforeunload', function (e) {
 - `<script async src="script.js"></script>` - Using async
 
 - use defer
-- `<script defer src="script.js"></script>` - Using defer
+- `<script defer src="![defer and async](https://user-images.githubusercontent.com/59168713/179721515-df7fb9b8-1206-4935-8534-f32b2d4ecb79.png)
+script.js"></script>` - Using defer
 
 - In html, we can write js code in the head or body end.
+- 
+![Uploading defer and async.png…]()
+
+
