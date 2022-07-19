@@ -559,6 +559,9 @@ script.js"></script>` - Using defer
 
 - In html, we can write js code in the head or body end.
 - 
-![Uploading defer and async.png…]()
+
+![defer and async](https://user-images.githubusercontent.com/59168713/179722487-d7431608-c936-4d2e-9401-cd8d2af6b0ae.png)
+f
+
 
 
