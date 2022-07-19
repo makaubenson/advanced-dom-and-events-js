@@ -545,3 +545,15 @@ window.addEventListener('beforeunload', function (e) {
   e.returnValue = '';
 });
 ```
+
+### Ways of Loading Js Script in HMTL
+
+- `<script src="script.js"></script>` - Regular Way
+
+- Use async
+- `<script async src="script.js"></script>` - Using async
+
+- use defer
+- `<script defer src="script.js"></script>` - Using defer
+
+- In html, we can write js code in the head or body end.
