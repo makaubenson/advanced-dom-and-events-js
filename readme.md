@@ -333,11 +333,8 @@ h1.addEventListener('mouseenter', alertH1);
 ### Event Propagation: Bubbling and Capturing
 
 - Js Events have a very important property. The Bubbling Phase and Capturing Phase.
-![Bulling and Capturing](https://user-images.githubusercontent.com/59168713/179665574-6592b59a-14c4-4651-b736-b317b009817a.png)
-![Bubling and Captring representation](https://user-images.githubusercontent.com/59168713/179665610-9d499449-38c3-486f-9c33-36e206fecb78.png)
-
-  
-  
+  ![Bulling and Capturing](https://user-images.githubusercontent.com/59168713/179665574-6592b59a-14c4-4651-b736-b317b009817a.png)
+  ![Bubling and Captring representation](https://user-images.githubusercontent.com/59168713/179665610-9d499449-38c3-486f-9c33-36e206fecb78.png)
 
 - When a link is clicked in `<a>` element, the event is generated at the `root document`, Then the `capturing phase` happens as the event travels from the `root document` down the tree to the `target element`. `html -> body -> section -> p -> a elements `
 - As the event reaches the target element, the `target phase` begins, where events can be handled right at the target. Event Listeners wait for an event to happen on a certain element, and as soon as it happens, they call the `callback` function.
@@ -478,4 +475,26 @@ console.log(h1.parentElement.children);
 [...h1.parentElement.children].forEach(function (el) {
   if (el !== h1) el.style.transform = 'scale(0.5)';
 });
+```
+
+### Sticky Navigation using The Intersection Observer API
+
+- This API allows our code to basically observe changes to the was a certain element intersects another element or the view port.
+
+```
+const header = document.querySelector('.header');
+const navHeight = nav.getBoundingClientRect().height;
+// console.log(navHeight);
+const stickyNav = function (entries) {
+  const [entry] = entries; // entries == entries[0] i.e they are the same
+  // console.log(entry);
+  if (!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+};
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`, //90px before target element : 90 is the height
+});
+headerObserver.observe(header);
 ```
