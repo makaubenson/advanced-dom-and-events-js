@@ -250,9 +250,9 @@ const btnRight = document.querySelector('.slider__btn--right');
 let curSlide = 0;
 const maxSlide = slides.length;
 
-const slider = document.querySelector('.slider');
-slider.style.transform = `scale(0.4) translateX(-800px)`;
-slider.style.overflow = 'visible';
+// const slider = document.querySelector('.slider');
+// slider.style.transform = `scale(0.4) translateX(-800px)`;
+// slider.style.overflow = 'visible';
 
 // //s- slide, i - index
 // slides.forEach(function (s, i) {
@@ -279,8 +279,18 @@ const nextSlide = function () {
   // Function Goes Here
   goToSlide(curSlide);
 };
+const prevSlide = function () {
+  if (curSlide === 0) {
+    curSlide = maxSlide - 1;
+  } else {
+    curSlide--;
+  }
+  // Function Goes Here
+  goToSlide(curSlide);
+};
 
 btnRight.addEventListener('click', nextSlide);
+btnLeft.addEventListener('click', prevSlide);
 ////////////////////////////////////////
 // Page Navigation
 ///////////////////////////////////////
