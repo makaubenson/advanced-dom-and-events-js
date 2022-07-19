@@ -503,3 +503,45 @@ headerObserver.observe(header);
 
 - Images have by far the most effect of perfomance of a website.
 - To optimize their perfomance, we can then use a strategy called `lazy Loading images`.
+
+### Lifecycle DOM Events
+
+- Refers to as from the time a website is accessed till the user leaves it.
+
+#### DOMContentLoaded
+
+- Fired by `document` as soon as the html is fully parsed,also all scripts must have downloaded and executed before the DOMCOntentLoaded is executed.
+- This event only waits for HTML and scripts to load, the rest of the files such as images are not a determinant here.
+
+```
+document.addEventListener('DOMContentLoaded', function (e) {
+  console.log('HTML PARSED AND DOM TREE BUILD', e);
+});
+```
+
+- We should only put code here that needs the html and scripts to have loaded before executing, or rather code that is dependent on the 2.
+  -If we have the script tag at the bottom of the html, right above `</body>` we do not need to listen for DOMContentLoaded.
+
+#### load event
+
+- It is fired by the `window` when all the files have loaded e.g images, html,css,scripts and any other external resoource.
+
+```
+window.addEventListener('load', function (e) {
+  console.log('PAGE FULLY LOADED', e);
+});
+```
+
+### beforeunload event
+
+- It is fired by `window` just right before the user is about to leave the page.
+- e.g after clicking the close button in the browser tab.
+- We can use these event to introduce the functionality of `asking users if they are sure they want to reload/close the page`.
+
+```
+window.addEventListener('beforeunload', function (e) {
+  e.preventDefault();
+  console.log(e);
+  e.returnValue = '';
+});
+```
