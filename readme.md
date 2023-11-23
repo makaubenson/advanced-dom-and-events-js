@@ -28,7 +28,6 @@
 #### Selecting the whole document
 
 ```
-
 console.log(document.documentElement);
 //Selecting the head section
 console.log(document.head);
@@ -42,7 +41,6 @@ console.log(allSections);
 
 //getElementById()
 document.getElementById('section--1');
-
 
 // getElementsByTagName()
 const allButtons = document.getElementsByTagName('button');
@@ -83,7 +81,6 @@ header.before(message);
 //inserts element after the select object
 header.after(message);
 ```
-
 - append and prepend can be used to move elements
 
 #### delete elements
