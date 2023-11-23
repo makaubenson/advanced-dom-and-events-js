@@ -7,11 +7,11 @@
 ### What is DOM
 
 - DOM allows us to:
-- Make js interact with the browser
-- Create, modify and delete html elements
+  - Make js interact with the browser
+  - Create, modify and delete html elements
 
-- DOM tree is generated from an HTML document, which we can then interact with.
-- DOM is a very complex API that contains lots of methods and properties to interact with the DOM tree.
+  - DOM tree is generated from an HTML document, which we can then interact with.
+  - DOM is a very complex API that contains lots of methods and properties to interact with the DOM tree.
 
 ### How DOM is organized behind the scenes
 
