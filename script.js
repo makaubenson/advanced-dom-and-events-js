@@ -558,9 +558,3 @@ document.addEventListener('DOMContentLoaded', function (e) {
 window.addEventListener('load', function (e) {
   console.log('PAGE FULLY LOADED', e);
 });
-
-// window.addEventListener('beforeunload', function (e) {
-//   e.preventDefault();
-//   console.log(e);
-//   e.returnValue = '';
-// });
