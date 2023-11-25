@@ -560,8 +560,3 @@ script.js"></script>` - Using defer
 ![defer and async](https://user-images.githubusercontent.com/59168713/179722487-d7431608-c936-4d2e-9401-cd8d2af6b0ae.png)
 
 ![regular vs async vs defer](https://user-images.githubusercontent.com/59168713/179723248-8a1e6678-cba7-43dc-9387-7813f744d26f.png)
-
-
-
-
-
